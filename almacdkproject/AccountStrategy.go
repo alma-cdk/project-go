@@ -34,12 +34,12 @@ func NewAccountStrategy_Override(a AccountStrategy) {
 // Enables single account strategy.
 //
 // 1. `shared` account with environments:
-//     - development
-//     - feature/*
-//     - test
-//     - qaN
-//     - staging
-//     - preproduction
+//    - development
+//    - feature/*
+//    - test
+//    - qaN
+//    - staging
+//    - preproduction
 // - production.
 //
 // Example:
@@ -71,13 +71,13 @@ func AccountStrategy_One(props *AccountStrategyOneProps) *map[string]*Account {
 // Enables triple account strategy.
 //
 // 1. `dev` account with environments:
-//     - development
-//     - feature/*
-//     - test
-//     - staging
+//    - development
+//    - feature/*
+//    - test
+//    - staging
 // 2. `preprod` account with environments:
-//     - qaN
-//     - preproduction
+//    - qaN
+//    - preproduction
 // 3. `prod` account with environments:
 // - production.
 //
@@ -116,13 +116,13 @@ func AccountStrategy_Three(props *AccountStrategyThreeProps) *map[string]*Accoun
 // Enables dual account strategy.
 //
 // 1. `dev` account with environments:
-//     - development
-//     - feature/*
-//     - test
-//     - qaN
-//     - staging
+//    - development
+//    - feature/*
+//    - test
+//    - qaN
+//    - staging
 // 2. `prod` account with environments:
-//     - preproduction
+//    - preproduction
 // - production.
 //
 // Example:

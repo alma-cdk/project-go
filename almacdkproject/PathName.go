@@ -28,6 +28,7 @@ func NewPathName_Override(p PathName) {
 	)
 }
 
+// PascalCase naming with global prefixes (org, project…).
 // Experimental.
 func PathName_Globally(scope constructs.Construct, baseName *string, props *NameProps) *string {
 	_init_.Initialize()

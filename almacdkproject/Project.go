@@ -22,24 +22,24 @@ import (
 //       organization: 'Acme Corp',
 //       name: 'Mad Scientists',
 //       email: 'mad.scientists@acme.example.com',
-//   },
-//   defaultRegion: 'eu-west-1', // defaults to one of: $CDK_DEFAULT_REGION, $AWS_REGION or us-east-1
-//   accounts: {
-//   dev: {
-//    id: '111111111111',
-//    environments: ['development', 'feature/.*', 'staging'],
-//    config: {
-//      baseDomain: 'example.net',
-//    },
-//   },
-//   prod: {
-//    id: '222222222222',
-//    environments: ['production'],
-//    config: {
-//      baseDomain: 'example.com',
-//    },
-//   },
-//   },
+//     },
+//     defaultRegion: 'eu-west-1', // defaults to one of: $CDK_DEFAULT_REGION, $AWS_REGION or us-east-1
+//     accounts: {
+//       dev: {
+//         id: '111111111111',
+//         environments: ['development', 'feature/.*', 'staging'],
+//         config: {
+//           baseDomain: 'example.net',
+//         },
+//       },
+//       prod: {
+//         id: '222222222222',
+//         environments: ['production'],
+//         config: {
+//           baseDomain: 'example.com',
+//         },
+//       },
+//     },
 //   })
 //
 // Experimental.

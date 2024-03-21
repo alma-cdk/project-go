@@ -28,6 +28,7 @@ func NewUrlName_Override(u UrlName) {
 	)
 }
 
+// PascalCase naming with global prefixes (org, project…).
 // Experimental.
 func UrlName_Globally(scope constructs.Construct, baseName *string, props *NameProps) *string {
 	_init_.Initialize()
