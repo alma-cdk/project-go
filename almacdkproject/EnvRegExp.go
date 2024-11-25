@@ -5,9 +5,7 @@ import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 )
 
-// Experimental.
 type EnvRegExp interface {
-	// Experimental.
 	Test(value *string) *bool
 }
 
@@ -16,7 +14,6 @@ type jsiiProxy_EnvRegExp struct {
 	_ byte // padding
 }
 
-// Experimental.
 func NewEnvRegExp(base *string) EnvRegExp {
 	_init_.Initialize()
 
@@ -34,7 +31,6 @@ func NewEnvRegExp(base *string) EnvRegExp {
 	return &j
 }
 
-// Experimental.
 func NewEnvRegExp_Override(e EnvRegExp, base *string) {
 	_init_.Initialize()
 

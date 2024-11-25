@@ -7,7 +7,6 @@ import (
 	"github.com/aws/constructs-go/constructs/v10"
 )
 
-// Experimental.
 type Name interface {
 }
 
@@ -16,7 +15,6 @@ type jsiiProxy_Name struct {
 	_ byte // padding
 }
 
-// Experimental.
 func NewName_Override(n Name) {
 	_init_.Initialize()
 
@@ -28,7 +26,6 @@ func NewName_Override(n Name) {
 }
 
 // PascalCase naming with global prefixes (org, project…).
-// Experimental.
 func Name_Globally(scope constructs.Construct, baseName *string, props *NameProps) *string {
 	_init_.Initialize()
 
@@ -47,7 +44,6 @@ func Name_Globally(scope constructs.Construct, baseName *string, props *NameProp
 	return returns
 }
 
-// Experimental.
 func Name_It(scope constructs.Construct, baseName *string, props *NameProps) *string {
 	_init_.Initialize()
 
@@ -66,7 +62,6 @@ func Name_It(scope constructs.Construct, baseName *string, props *NameProps) *st
 	return returns
 }
 
-// Experimental.
 func Name_WithProject(scope constructs.Construct, baseName *string, props *NameProps) *string {
 	_init_.Initialize()
 

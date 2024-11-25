@@ -42,30 +42,23 @@ import (
 //     },
 //   })
 //
-// Experimental.
 type Project interface {
 	awscdk.App
 	// The default account for all resources defined within this stage.
-	// Experimental.
 	Account() *string
 	// Artifact ID of the assembly if it is a nested stage. The root stage (app) will return an empty string.
 	//
 	// Derived from the construct path.
-	// Experimental.
 	ArtifactId() *string
 	// The cloud assembly asset output directory.
-	// Experimental.
 	AssetOutdir() *string
 	// The tree node.
-	// Experimental.
 	Node() constructs.Node
 	// The cloud assembly output directory.
-	// Experimental.
 	Outdir() *string
 	// The parent stage or `undefined` if this is the app.
 	//
 	// *.
-	// Experimental.
 	ParentStage() awscdk.Stage
 	// Validation plugins to run during synthesis.
 	//
@@ -73,28 +66,22 @@ type Project interface {
 	// synthesis will be interrupted and the report displayed to the user.
 	// Default: - no validation plugins are used.
 	//
-	// Experimental.
 	PolicyValidationBeta1() *[]awscdk.IPolicyValidationPluginBeta1
 	// The default region for all resources defined within this stage.
-	// Experimental.
 	Region() *string
 	// The name of the stage.
 	//
 	// Based on names of the parent stages separated by
 	// hypens.
-	// Experimental.
 	StageName() *string
 	// Acknowledge warnings for all stacks in the project.
-	// Experimental.
 	AcknowledgeWarnings(acknowledgements *[]*Acknowledgeable)
 	// Synthesize this stage into a cloud assembly.
 	//
 	// Once an assembly has been synthesized, it cannot be modified. Subsequent
 	// calls will return the same assembly.
-	// Experimental.
 	Synth(options *awscdk.StageSynthesisOptions) cxapi.CloudAssembly
 	// Returns a string representation of this construct.
-	// Experimental.
 	ToString() *string
 }
 
@@ -195,7 +182,6 @@ func (j *jsiiProxy_Project) StageName() *string {
 
 
 // Initializes a new Project (which can be used in place of cdk.App).
-// Experimental.
 func NewProject(props *ProjectProps) Project {
 	_init_.Initialize()
 
@@ -214,7 +200,6 @@ func NewProject(props *ProjectProps) Project {
 }
 
 // Initializes a new Project (which can be used in place of cdk.App).
-// Experimental.
 func NewProject_Override(p Project, props *ProjectProps) {
 	_init_.Initialize()
 
@@ -226,7 +211,6 @@ func NewProject_Override(p Project, props *ProjectProps) {
 }
 
 // Return account configuration.
-// Experimental.
 func Project_GetAccount(scope constructs.Construct, accountType *string) *Account {
 	_init_.Initialize()
 
@@ -246,7 +230,6 @@ func Project_GetAccount(scope constructs.Construct, accountType *string) *Accoun
 }
 
 // Return the project configuration as given in ProjectProps.
-// Experimental.
 func Project_GetConfiguration(scope constructs.Construct) *ProjectConfiguration {
 	_init_.Initialize()
 
@@ -268,7 +251,6 @@ func Project_GetConfiguration(scope constructs.Construct) *ProjectConfiguration 
 // Checks if an object is an instance of the `App` class.
 //
 // Returns: `true` if `obj` is an `App`.
-// Experimental.
 func Project_IsApp(obj interface{}) *bool {
 	_init_.Initialize()
 
@@ -304,7 +286,6 @@ func Project_IsApp(obj interface{}) *bool {
 // this type-testing method instead.
 //
 // Returns: true if `x` is an object created from a class which extends `Construct`.
-// Experimental.
 func Project_IsConstruct(x interface{}) *bool {
 	_init_.Initialize()
 
@@ -324,7 +305,6 @@ func Project_IsConstruct(x interface{}) *bool {
 }
 
 // Test whether the given construct is a stage.
-// Experimental.
 func Project_IsStage(x interface{}) *bool {
 	_init_.Initialize()
 
@@ -347,7 +327,6 @@ func Project_IsStage(x interface{}) *bool {
 //
 // If called
 // on a nested stage, returns its parent.
-// Experimental.
 func Project_Of(construct constructs.IConstruct) awscdk.Stage {
 	_init_.Initialize()
 

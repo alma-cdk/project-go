@@ -7,7 +7,6 @@ import (
 	"github.com/aws/constructs-go/constructs/v10"
 )
 
-// Experimental.
 type EnvironmentContext interface {
 }
 
@@ -16,7 +15,6 @@ type jsiiProxy_EnvironmentContext struct {
 	_ byte // padding
 }
 
-// Experimental.
 func NewEnvironmentContext() EnvironmentContext {
 	_init_.Initialize()
 
@@ -31,7 +29,6 @@ func NewEnvironmentContext() EnvironmentContext {
 	return &j
 }
 
-// Experimental.
 func NewEnvironmentContext_Override(e EnvironmentContext) {
 	_init_.Initialize()
 
@@ -57,7 +54,6 @@ func NewEnvironmentContext_Override(e EnvironmentContext) {
 //   'verification'
 //   'stable'
 //
-// Experimental.
 func EnvironmentContext_GetCategory(scope constructs.Construct) EnvironmentCategory {
 	_init_.Initialize()
 
@@ -84,7 +80,6 @@ func EnvironmentContext_GetCategory(scope constructs.Construct) EnvironmentCateg
 // If environment is not a feature environment, will return an empty string.
 //
 // Returns: string indicating the feature this environment relates to, if not feature environment returns an empty string.
-// Experimental.
 func EnvironmentContext_GetFeatureInfo(scope constructs.Construct) *string {
 	_init_.Initialize()
 
@@ -122,7 +117,6 @@ func EnvironmentContext_GetFeatureInfo(scope constructs.Construct) *string {
 //   'preproduction'
 //   'production'
 //
-// Experimental.
 func EnvironmentContext_GetLabel(scope constructs.Construct) EnvironmentLabel {
 	_init_.Initialize()
 
@@ -160,7 +154,6 @@ func EnvironmentContext_GetLabel(scope constructs.Construct) EnvironmentLabel {
 //   'preproduction'
 //   'production'
 //
-// Experimental.
 func EnvironmentContext_GetName(scope constructs.Construct) *string {
 	_init_.Initialize()
 
@@ -198,7 +191,6 @@ func EnvironmentContext_GetName(scope constructs.Construct) *string {
 //   'preproduction'
 //   'production'
 //
-// Experimental.
 func EnvironmentContext_GetUrlName(scope constructs.Construct) *string {
 	_init_.Initialize()
 
@@ -222,7 +214,6 @@ func EnvironmentContext_GetUrlName(scope constructs.Construct) *string {
 // Returns true for `development`, otherwise `false`.
 //
 // Returns: boolean indicating does Environment belong to `development` category.
-// Experimental.
 func EnvironmentContext_IsDevelopment(scope constructs.Construct) *bool {
 	_init_.Initialize()
 
@@ -246,7 +237,6 @@ func EnvironmentContext_IsDevelopment(scope constructs.Construct) *bool {
 // Returns `true` for environments with name beginning with `feature/`-prefix, otherwise `false`.
 //
 // Returns: boolean indicating does Environment belong to `feature` category.
-// Experimental.
 func EnvironmentContext_IsFeature(scope constructs.Construct) *bool {
 	_init_.Initialize()
 
@@ -268,7 +258,6 @@ func EnvironmentContext_IsFeature(scope constructs.Construct) *bool {
 // Check if Environment is part of `mock` category.
 //
 // Returns: boolean indicating does Environment belong to `mock` category.
-// Experimental.
 func EnvironmentContext_IsMock(scope constructs.Construct) *bool {
 	_init_.Initialize()
 
@@ -292,7 +281,6 @@ func EnvironmentContext_IsMock(scope constructs.Construct) *bool {
 // Returns `true` for `staging` & `production`, otherwise `false`.
 //
 // Returns: boolean indicating does Environment belong to `stable` category.
-// Experimental.
 func EnvironmentContext_IsStable(scope constructs.Construct) *bool {
 	_init_.Initialize()
 
@@ -316,7 +304,6 @@ func EnvironmentContext_IsStable(scope constructs.Construct) *bool {
 // Returns `true` for `test` & `preproduction`, otherwise `false`.
 //
 // Returns: boolean indicating does Environment belong to `verification` category.
-// Experimental.
 func EnvironmentContext_IsVerification(scope constructs.Construct) *bool {
 	_init_.Initialize()
 

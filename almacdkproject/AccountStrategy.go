@@ -11,7 +11,6 @@ import (
 // - One Account: `shared`
 // - Two Accounts: `dev`+`prod` – _recommended_
 // - Three Accounts: `dev`+`preprod`+`prod`.
-// Experimental.
 type AccountStrategy interface {
 }
 
@@ -20,7 +19,6 @@ type jsiiProxy_AccountStrategy struct {
 	_ byte // padding
 }
 
-// Experimental.
 func NewAccountStrategy_Override(a AccountStrategy) {
 	_init_.Initialize()
 
@@ -49,7 +47,6 @@ func NewAccountStrategy_Override(a AccountStrategy) {
 //     },
 //   }),
 //
-// Experimental.
 func AccountStrategy_One(props *AccountStrategyOneProps) *map[string]*Account {
 	_init_.Initialize()
 
@@ -94,7 +91,6 @@ func AccountStrategy_One(props *AccountStrategyOneProps) *map[string]*Account {
 //     },
 //   }),
 //
-// Experimental.
 func AccountStrategy_Three(props *AccountStrategyThreeProps) *map[string]*Account {
 	_init_.Initialize()
 
@@ -135,7 +131,6 @@ func AccountStrategy_Three(props *AccountStrategyThreeProps) *map[string]*Accoun
 //     },
 //   }),
 //
-// Experimental.
 func AccountStrategy_Two(props *AccountStrategyTwoProps) *map[string]*Account {
 	_init_.Initialize()
 

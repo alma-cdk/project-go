@@ -9,14 +9,11 @@ import (
 )
 
 // Wrapper for account-level stacks.
-// Experimental.
 type AccountWrapper interface {
 	constructs.Construct
 	// The tree node.
-	// Experimental.
 	Node() constructs.Node
 	// Returns a string representation of this construct.
-	// Experimental.
 	ToString() *string
 }
 
@@ -36,7 +33,6 @@ func (j *jsiiProxy_AccountWrapper) Node() constructs.Node {
 }
 
 
-// Experimental.
 func NewAccountWrapper(scope constructs.Construct) AccountWrapper {
 	_init_.Initialize()
 
@@ -54,7 +50,6 @@ func NewAccountWrapper(scope constructs.Construct) AccountWrapper {
 	return &j
 }
 
-// Experimental.
 func NewAccountWrapper_Override(a AccountWrapper, scope constructs.Construct) {
 	_init_.Initialize()
 
@@ -82,7 +77,6 @@ func NewAccountWrapper_Override(a AccountWrapper, scope constructs.Construct) {
 // this type-testing method instead.
 //
 // Returns: true if `x` is an object created from a class which extends `Construct`.
-// Experimental.
 func AccountWrapper_IsConstruct(x interface{}) *bool {
 	_init_.Initialize()
 

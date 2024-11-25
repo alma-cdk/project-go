@@ -8,7 +8,6 @@ import (
 )
 
 // Internal class to handle set/get operations for Account Type.
-// Experimental.
 type AccountType interface {
 }
 
@@ -17,7 +16,6 @@ type jsiiProxy_AccountType struct {
 	_ byte // padding
 }
 
-// Experimental.
 func NewAccountType() AccountType {
 	_init_.Initialize()
 
@@ -32,7 +30,6 @@ func NewAccountType() AccountType {
 	return &j
 }
 
-// Experimental.
 func NewAccountType_Override(a AccountType) {
 	_init_.Initialize()
 
@@ -43,7 +40,6 @@ func NewAccountType_Override(a AccountType) {
 	)
 }
 
-// Experimental.
 func AccountType_Get(scope constructs.Construct) *string {
 	_init_.Initialize()
 
@@ -62,7 +58,6 @@ func AccountType_Get(scope constructs.Construct) *string {
 	return returns
 }
 
-// Experimental.
 func AccountType_MatchFromEnvironment(scope constructs.Construct, accounts *map[string]*Account, environmentType *string) *string {
 	_init_.Initialize()
 
@@ -81,7 +76,6 @@ func AccountType_MatchFromEnvironment(scope constructs.Construct, accounts *map[
 	return returns
 }
 
-// Experimental.
 func AccountType_Set(scope constructs.Construct, accountType *string) {
 	_init_.Initialize()
 

@@ -7,7 +7,6 @@ import (
 	"github.com/aws/constructs-go/constructs/v10"
 )
 
-// Experimental.
 type PathName interface {
 	UrlName
 }
@@ -17,7 +16,6 @@ type jsiiProxy_PathName struct {
 	jsiiProxy_UrlName
 }
 
-// Experimental.
 func NewPathName_Override(p PathName) {
 	_init_.Initialize()
 
@@ -29,7 +27,6 @@ func NewPathName_Override(p PathName) {
 }
 
 // PascalCase naming with global prefixes (org, project…).
-// Experimental.
 func PathName_Globally(scope constructs.Construct, baseName *string, props *NameProps) *string {
 	_init_.Initialize()
 
@@ -48,7 +45,6 @@ func PathName_Globally(scope constructs.Construct, baseName *string, props *Name
 	return returns
 }
 
-// Experimental.
 func PathName_It(scope constructs.Construct, baseName *string, props *NameProps) *string {
 	_init_.Initialize()
 
@@ -67,7 +63,6 @@ func PathName_It(scope constructs.Construct, baseName *string, props *NameProps)
 	return returns
 }
 
-// Experimental.
 func PathName_WithProject(scope constructs.Construct, baseName *string, props *NameProps) *string {
 	_init_.Initialize()
 

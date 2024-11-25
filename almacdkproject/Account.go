@@ -2,14 +2,12 @@ package almacdkproject
 
 
 // AWS account configuration.
-// Experimental.
 type Account struct {
 	// AWS Account ID.
 	//
 	// Example:
 	//   '123456789012'
 	//
-	// Experimental.
 	Id *string `field:"required" json:"id" yaml:"id"`
 	// AWS account specific configuration.
 	//
@@ -31,7 +29,6 @@ type Account struct {
 	//     },
 	//   },
 	//
-	// Experimental.
 	Config *map[string]interface{} `field:"optional" json:"config" yaml:"config"`
 	// List of accepted environments for the given account.
 	//
@@ -40,7 +37,6 @@ type Account struct {
 	// Example:
 	//   ["development", "feature/.*"]
 	//
-	// Experimental.
 	Environments *[]*string `field:"optional" json:"environments" yaml:"environments"`
 }
 

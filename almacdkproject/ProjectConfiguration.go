@@ -1,7 +1,6 @@
 package almacdkproject
 
 
-// Experimental.
 type ProjectConfiguration struct {
 	// Dictionary of AWS account specific configuration.
 	//
@@ -23,12 +22,10 @@ type ProjectConfiguration struct {
 	//     },
 	//   },
 	//
-	// Experimental.
 	Accounts *map[string]*Account `field:"required" json:"accounts" yaml:"accounts"`
 	// Author information.
 	//
 	// I.e. who owns/develops this project/service.
-	// Experimental.
 	Author *Author `field:"required" json:"author" yaml:"author"`
 	// Name of your project/service.
 	//
@@ -37,7 +34,6 @@ type ProjectConfiguration struct {
 	// Example:
 	//   'my-cool-project'
 	//
-	// Experimental.
 	Name *string `field:"required" json:"name" yaml:"name"`
 	// Specify default region you wish to use.
 	//
@@ -45,7 +41,6 @@ type ProjectConfiguration struct {
 	// 1. `$CDK_DEFAULT_REGION`
 	// 2. `$AWS_REGION`
 	// 3. 'us-east-1'
-	// Experimental.
 	DefaultRegion *string `field:"optional" json:"defaultRegion" yaml:"defaultRegion"`
 }
 

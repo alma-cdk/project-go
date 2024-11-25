@@ -7,7 +7,6 @@ import (
 	"github.com/aws/constructs-go/constructs/v10"
 )
 
-// Experimental.
 type ProjectContext interface {
 }
 
@@ -16,7 +15,6 @@ type jsiiProxy_ProjectContext struct {
 	_ byte // padding
 }
 
-// Experimental.
 func NewProjectContext() ProjectContext {
 	_init_.Initialize()
 
@@ -31,7 +29,6 @@ func NewProjectContext() ProjectContext {
 	return &j
 }
 
-// Experimental.
 func NewProjectContext_Override(p ProjectContext) {
 	_init_.Initialize()
 
@@ -42,7 +39,6 @@ func NewProjectContext_Override(p ProjectContext) {
 	)
 }
 
-// Experimental.
 func ProjectContext_GetAccountConfig(scope constructs.Construct, key *string, defaultValue interface{}) interface{} {
 	_init_.Initialize()
 
@@ -61,7 +57,6 @@ func ProjectContext_GetAccountConfig(scope constructs.Construct, key *string, de
 	return returns
 }
 
-// Experimental.
 func ProjectContext_GetAccountId(scope constructs.Construct) *string {
 	_init_.Initialize()
 
@@ -81,7 +76,6 @@ func ProjectContext_GetAccountId(scope constructs.Construct) *string {
 }
 
 // Returns the account type given in runtime/CLI context.
-// Experimental.
 func ProjectContext_GetAccountType(scope constructs.Construct) *string {
 	_init_.Initialize()
 
@@ -100,7 +94,6 @@ func ProjectContext_GetAccountType(scope constructs.Construct) *string {
 	return returns
 }
 
-// Experimental.
 func ProjectContext_GetAllowedEnvironments(scope constructs.Construct) *[]*string {
 	_init_.Initialize()
 
@@ -119,7 +112,6 @@ func ProjectContext_GetAllowedEnvironments(scope constructs.Construct) *[]*strin
 	return returns
 }
 
-// Experimental.
 func ProjectContext_GetAuthorEmail(scope constructs.Construct) *string {
 	_init_.Initialize()
 
@@ -138,7 +130,6 @@ func ProjectContext_GetAuthorEmail(scope constructs.Construct) *string {
 	return returns
 }
 
-// Experimental.
 func ProjectContext_GetAuthorName(scope constructs.Construct) *string {
 	_init_.Initialize()
 
@@ -157,7 +148,6 @@ func ProjectContext_GetAuthorName(scope constructs.Construct) *string {
 	return returns
 }
 
-// Experimental.
 func ProjectContext_GetAuthorOrganization(scope constructs.Construct) *string {
 	_init_.Initialize()
 
@@ -176,7 +166,6 @@ func ProjectContext_GetAuthorOrganization(scope constructs.Construct) *string {
 	return returns
 }
 
-// Experimental.
 func ProjectContext_GetDefaultRegion(scope constructs.Construct) *string {
 	_init_.Initialize()
 
@@ -195,7 +184,6 @@ func ProjectContext_GetDefaultRegion(scope constructs.Construct) *string {
 	return returns
 }
 
-// Experimental.
 func ProjectContext_GetEnvironment(scope constructs.Construct) *string {
 	_init_.Initialize()
 
@@ -214,7 +202,6 @@ func ProjectContext_GetEnvironment(scope constructs.Construct) *string {
 	return returns
 }
 
-// Experimental.
 func ProjectContext_GetName(scope constructs.Construct) *string {
 	_init_.Initialize()
 
@@ -233,7 +220,6 @@ func ProjectContext_GetName(scope constructs.Construct) *string {
 	return returns
 }
 
-// Experimental.
 func ProjectContext_TryGetEnvironment(scope constructs.Construct) *string {
 	_init_.Initialize()
 

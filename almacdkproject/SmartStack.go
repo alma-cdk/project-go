@@ -10,7 +10,6 @@ import (
 	"github.com/aws/constructs-go/constructs/v10"
 )
 
-// Experimental.
 type SmartStack interface {
 	awscdk.Stack
 	// The AWS account into which this stack will be deployed.
@@ -31,10 +30,8 @@ type SmartStack interface {
 	// into a **account-agnostic template**. In this case, your code should either
 	// fail (throw an error, emit a synth error using `Annotations.of(construct).addError()`) or
 	// implement some other region-agnostic behavior.
-	// Experimental.
 	Account() *string
 	// The ID of the cloud assembly artifact for this stack.
-	// Experimental.
 	ArtifactId() *string
 	// Returns the list of AZs that are available in the AWS environment (account/region) associated with this stack.
 	//
@@ -48,13 +45,10 @@ type SmartStack interface {
 	// `DescribeAvailabilityZones` on the target environment.
 	//
 	// To specify a different strategy for selecting availability zones override this method.
-	// Experimental.
 	AvailabilityZones() *[]*string
 	// Indicates whether the stack requires bundling or not.
-	// Experimental.
 	BundlingRequired() *bool
 	// Return the stacks this stack depends on.
-	// Experimental.
 	Dependencies() *[]awscdk.Stack
 	// The environment coordinates in which this stack is deployed.
 	//
@@ -69,27 +63,20 @@ type SmartStack interface {
 	// `Aws.ACCOUNT_ID` or `Aws.REGION`) the special strings `unknown-account` and/or
 	// `unknown-region` will be used respectively to indicate this stack is
 	// region/account-agnostic.
-	// Experimental.
 	Environment() *string
 	// Indicates if this is a nested stack, in which case `parentStack` will include a reference to it's parent.
-	// Experimental.
 	Nested() *bool
 	// If this is a nested stack, returns it's parent stack.
-	// Experimental.
 	NestedStackParent() awscdk.Stack
 	// If this is a nested stack, this represents its `AWS::CloudFormation::Stack` resource.
 	//
 	// `undefined` for top-level (non-nested) stacks.
-	// Experimental.
 	NestedStackResource() awscdk.CfnResource
 	// The tree node.
-	// Experimental.
 	Node() constructs.Node
 	// Returns the list of notification Amazon Resource Names (ARNs) for the current stack.
-	// Experimental.
 	NotificationArns() *[]*string
 	// The partition in which this stack is defined.
-	// Experimental.
 	Partition() *string
 	// The AWS region into which this stack will be deployed (e.g. `us-west-2`).
 	//
@@ -109,7 +96,6 @@ type SmartStack interface {
 	// into a **region-agnostic template**. In this case, your code should either
 	// fail (throw an error, emit a synth error using `Annotations.of(construct).addError()`) or
 	// implement some other region-agnostic behavior.
-	// Experimental.
 	Region() *string
 	// The ID of the stack.
 	//
@@ -117,7 +103,6 @@ type SmartStack interface {
 	//   // After resolving, looks like
 	//   'arn:aws:cloudformation:us-west-2:123456789012:stack/teststack/51af3dc0-da77-11e4-872e-1234567db123'
 	//
-	// Experimental.
 	StackId() *string
 	// The concrete CloudFormation physical stack name.
 	//
@@ -129,42 +114,32 @@ type SmartStack interface {
 	//
 	// If you wish to obtain the deploy-time AWS::StackName intrinsic,
 	// you can use `Aws.STACK_NAME` directly.
-	// Experimental.
 	StackName() *string
 	// Synthesis method for this stack.
-	// Experimental.
 	Synthesizer() awscdk.IStackSynthesizer
 	// Tags to be applied to the stack.
-	// Experimental.
 	Tags() awscdk.TagManager
 	// The name of the CloudFormation template file emitted to the output directory during synthesis.
 	//
 	// Example value: `MyStack.template.json`
-	// Experimental.
 	TemplateFile() *string
 	// Options for CloudFormation template (like version, transform, description).
-	// Experimental.
 	TemplateOptions() awscdk.ITemplateOptions
 	// Whether termination protection is enabled for this stack.
-	// Experimental.
 	TerminationProtection() *bool
-	// Experimental.
 	SetTerminationProtection(val *bool)
 	// The Amazon domain suffix for the region in which this stack is defined.
-	// Experimental.
 	UrlSuffix() *string
 	// Add a dependency between this stack and another stack.
 	//
 	// This can be used to define dependencies between any two stacks within an
 	// app, and also supports nested stacks.
-	// Experimental.
 	AddDependency(target awscdk.Stack, reason *string)
 	// Adds an arbitary key-value pair, with information you want to record about the stack.
 	//
 	// These get translated to the Metadata section of the generated template.
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
 	//
-	// Experimental.
 	AddMetadata(key *string, value interface{})
 	// Add a Transform to this stack. A Transform is a macro that AWS CloudFormation uses to process your template.
 	//
@@ -177,7 +152,6 @@ type SmartStack interface {
 	//
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html
 	//
-	// Experimental.
 	AddTransform(transform *string)
 	// Returns the naming scheme used to allocate logical IDs.
 	//
@@ -217,7 +191,6 @@ type SmartStack interface {
 	// - If a component is named "Resource" it will be omitted from the user-visible
 	//   path, but included in the hash. This reduces visual noise in the human readable
 	//   part of the identifier.
-	// Experimental.
 	AllocateLogicalId(cfnElement awscdk.CfnElement) *string
 	// Create a CloudFormation Export for a string list value.
 	//
@@ -238,7 +211,6 @@ type SmartStack interface {
 	// the resource and the manual export.
 	//
 	// See `exportValue` for an example of this process.
-	// Experimental.
 	ExportStringListValue(exportedValue interface{}, options *awscdk.ExportValueOptions) *[]*string
 	// Create a CloudFormation Export for a string value.
 	//
@@ -284,7 +256,6 @@ type SmartStack interface {
 	// - You are now free to remove the `bucket` resource from `producerStack`.
 	// - Don't forget to remove the `exportValue()` call as well.
 	// - Deploy again (this time only the `producerStack` will be changed -- the bucket will be deleted).
-	// Experimental.
 	ExportValue(exportedValue interface{}, options *awscdk.ExportValueOptions) *string
 	// Creates an ARN from components.
 	//
@@ -301,7 +272,6 @@ type SmartStack interface {
 	// The required ARN pieces that are omitted will be taken from the stack that
 	// the 'scope' is attached to. If all ARN pieces are supplied, the supplied scope
 	// can be 'undefined'.
-	// Experimental.
 	FormatArn(components *awscdk.ArnComponents) *string
 	// Allocates a stack-unique CloudFormation-compatible logical identity for a specific resource.
 	//
@@ -312,7 +282,6 @@ type SmartStack interface {
 	// This method uses the protected method `allocateLogicalId` to render the
 	// logical ID for an element. To modify the naming scheme, extend the `Stack`
 	// class and override this method.
-	// Experimental.
 	GetLogicalId(element awscdk.CfnElement) *string
 	// Look up a fact value for the given fact for the region of this stack.
 	//
@@ -331,22 +300,18 @@ type SmartStack interface {
 	//
 	// If `defaultValue` is not given, it is an error if the fact is unknown for
 	// the given region.
-	// Experimental.
 	RegionalFact(factName *string, defaultValue *string) *string
 	// Rename a generated logical identities.
 	//
 	// To modify the naming scheme strategy, extend the `Stack` class and
 	// override the `allocateLogicalId` method.
-	// Experimental.
 	RenameLogicalId(oldId *string, newId *string)
 	// Indicate that a context key was expected.
 	//
 	// Contains instructions which will be emitted into the cloud assembly on how
 	// the key should be supplied.
-	// Experimental.
 	ReportMissingContextKey(report *cloudassemblyschema.MissingContext)
 	// Resolve a tokenized value in the context of the current stack.
-	// Experimental.
 	Resolve(obj interface{}) interface{}
 	// Splits the provided ARN into its components.
 	//
@@ -354,16 +319,12 @@ type SmartStack interface {
 	// and a Token representing a dynamic CloudFormation expression
 	// (in which case the returned components will also be dynamic CloudFormation expressions,
 	// encoded as Tokens).
-	// Experimental.
 	SplitArn(arn *string, arnFormat awscdk.ArnFormat) *awscdk.ArnComponents
 	// Convert an object, potentially containing tokens, to a JSON string.
-	// Experimental.
 	ToJsonString(obj interface{}, space *float64) *string
 	// Returns a string representation of this construct.
-	// Experimental.
 	ToString() *string
 	// Convert an object, potentially containing tokens, to a YAML string.
-	// Experimental.
 	ToYamlString(obj interface{}) *string
 }
 
@@ -583,7 +544,6 @@ func (j *jsiiProxy_SmartStack) UrlSuffix() *string {
 }
 
 
-// Experimental.
 func NewSmartStack(scope constructs.Construct, id *string, props *awscdk.StackProps) SmartStack {
 	_init_.Initialize()
 
@@ -601,7 +561,6 @@ func NewSmartStack(scope constructs.Construct, id *string, props *awscdk.StackPr
 	return &j
 }
 
-// Experimental.
 func NewSmartStack_Override(s SmartStack, scope constructs.Construct, id *string, props *awscdk.StackProps) {
 	_init_.Initialize()
 
@@ -640,7 +599,6 @@ func (j *jsiiProxy_SmartStack)SetTerminationProtection(val *bool) {
 // this type-testing method instead.
 //
 // Returns: true if `x` is an object created from a class which extends `Construct`.
-// Experimental.
 func SmartStack_IsConstruct(x interface{}) *bool {
 	_init_.Initialize()
 
@@ -662,7 +620,6 @@ func SmartStack_IsConstruct(x interface{}) *bool {
 // Return whether the given object is a Stack.
 //
 // We do attribute detection since we can't reliably use 'instanceof'.
-// Experimental.
 func SmartStack_IsStack(x interface{}) *bool {
 	_init_.Initialize()
 
@@ -684,7 +641,6 @@ func SmartStack_IsStack(x interface{}) *bool {
 // Looks up the first stack scope in which `construct` is defined.
 //
 // Fails if there is no stack up the tree.
-// Experimental.
 func SmartStack_Of(construct constructs.IConstruct) awscdk.Stack {
 	_init_.Initialize()
 

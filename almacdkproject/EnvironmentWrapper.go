@@ -9,14 +9,11 @@ import (
 )
 
 // Wrapper for environmental stacks.
-// Experimental.
 type EnvironmentWrapper interface {
 	constructs.Construct
 	// The tree node.
-	// Experimental.
 	Node() constructs.Node
 	// Returns a string representation of this construct.
-	// Experimental.
 	ToString() *string
 }
 
@@ -36,7 +33,6 @@ func (j *jsiiProxy_EnvironmentWrapper) Node() constructs.Node {
 }
 
 
-// Experimental.
 func NewEnvironmentWrapper(scope constructs.Construct) EnvironmentWrapper {
 	_init_.Initialize()
 
@@ -54,7 +50,6 @@ func NewEnvironmentWrapper(scope constructs.Construct) EnvironmentWrapper {
 	return &j
 }
 
-// Experimental.
 func NewEnvironmentWrapper_Override(e EnvironmentWrapper, scope constructs.Construct) {
 	_init_.Initialize()
 
@@ -82,7 +77,6 @@ func NewEnvironmentWrapper_Override(e EnvironmentWrapper, scope constructs.Const
 // this type-testing method instead.
 //
 // Returns: true if `x` is an object created from a class which extends `Construct`.
-// Experimental.
 func EnvironmentWrapper_IsConstruct(x interface{}) *bool {
 	_init_.Initialize()
 

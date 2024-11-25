@@ -8,7 +8,6 @@ import (
 )
 
 // Internal class to handle set/get operations for Environment Type.
-// Experimental.
 type EnvironmentType interface {
 }
 
@@ -17,7 +16,6 @@ type jsiiProxy_EnvironmentType struct {
 	_ byte // padding
 }
 
-// Experimental.
 func NewEnvironmentType() EnvironmentType {
 	_init_.Initialize()
 
@@ -32,7 +30,6 @@ func NewEnvironmentType() EnvironmentType {
 	return &j
 }
 
-// Experimental.
 func NewEnvironmentType_Override(e EnvironmentType) {
 	_init_.Initialize()
 
@@ -43,7 +40,6 @@ func NewEnvironmentType_Override(e EnvironmentType) {
 	)
 }
 
-// Experimental.
 func EnvironmentType_Get(scope constructs.Construct, allowedEnvironments *[]*string) *string {
 	_init_.Initialize()
 
@@ -62,7 +58,6 @@ func EnvironmentType_Get(scope constructs.Construct, allowedEnvironments *[]*str
 	return returns
 }
 
-// Experimental.
 func EnvironmentType_Set(scope constructs.Construct, environmentType *string) {
 	_init_.Initialize()
 
@@ -76,7 +71,6 @@ func EnvironmentType_Set(scope constructs.Construct, environmentType *string) {
 	)
 }
 
-// Experimental.
 func EnvironmentType_TryGet(scope constructs.Construct) *string {
 	_init_.Initialize()
 

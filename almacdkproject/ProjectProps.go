@@ -7,7 +7,6 @@ import (
 // Props given to `Project`.
 //
 // I.e. custom props for this construct and the usual props given to `cdk.App`.
-// Experimental.
 type ProjectProps struct {
 	// Dictionary of AWS account specific configuration.
 	//
@@ -29,12 +28,10 @@ type ProjectProps struct {
 	//     },
 	//   },
 	//
-	// Experimental.
 	Accounts *map[string]*Account `field:"required" json:"accounts" yaml:"accounts"`
 	// Author information.
 	//
 	// I.e. who owns/develops this project/service.
-	// Experimental.
 	Author *Author `field:"required" json:"author" yaml:"author"`
 	// Name of your project/service.
 	//
@@ -43,7 +40,6 @@ type ProjectProps struct {
 	// Example:
 	//   'my-cool-project'
 	//
-	// Experimental.
 	Name *string `field:"required" json:"name" yaml:"name"`
 	// Specify default region you wish to use.
 	//
@@ -51,12 +47,10 @@ type ProjectProps struct {
 	// 1. `$CDK_DEFAULT_REGION`
 	// 2. `$AWS_REGION`
 	// 3. 'us-east-1'
-	// Experimental.
 	DefaultRegion *string `field:"optional" json:"defaultRegion" yaml:"defaultRegion"`
 	// Include runtime versioning information in the Stacks of this app.
 	// Default: Value of 'aws:cdk:version-reporting' context key.
 	//
-	// Experimental.
 	AnalyticsReporting *bool `field:"optional" json:"analyticsReporting" yaml:"analyticsReporting"`
 	// Automatically call `synth()` before the program exits.
 	//
@@ -66,7 +60,6 @@ type ProjectProps struct {
 	// Default: true if running via CDK CLI (`CDK_OUTDIR` is set), `false`
 	// otherwise.
 	//
-	// Experimental.
 	AutoSynth *bool `field:"optional" json:"autoSynth" yaml:"autoSynth"`
 	// Additional context values for the application.
 	//
@@ -75,7 +68,6 @@ type ProjectProps struct {
 	// Context can be read from any construct using `node.getContext(key)`.
 	// Default: - no additional context.
 	//
-	// Experimental.
 	Context *map[string]interface{} `field:"optional" json:"context" yaml:"context"`
 	// The stack synthesizer to use by default for all Stacks in the App.
 	//
@@ -84,7 +76,6 @@ type ProjectProps struct {
 	// information, see the README of the main CDK package.
 	// Default: - A `DefaultStackSynthesizer` with default settings.
 	//
-	// Experimental.
 	DefaultStackSynthesizer awscdk.IReusableStackSynthesizer `field:"optional" json:"defaultStackSynthesizer" yaml:"defaultStackSynthesizer"`
 	// The output directory into which to emit synthesized artifacts.
 	//
@@ -96,12 +87,10 @@ type ProjectProps struct {
 	// Default: - If this value is _not_ set, considers the environment variable `CDK_OUTDIR`.
 	//   If `CDK_OUTDIR` is not defined, uses a temp directory.
 	//
-	// Experimental.
 	Outdir *string `field:"optional" json:"outdir" yaml:"outdir"`
 	// Validation plugins to run after synthesis.
 	// Default: - no validation plugins.
 	//
-	// Experimental.
 	PolicyValidationBeta1 *[]awscdk.IPolicyValidationPluginBeta1 `field:"optional" json:"policyValidationBeta1" yaml:"policyValidationBeta1"`
 	// Additional context values for the application.
 	//
@@ -131,17 +120,14 @@ type ProjectProps struct {
 	//
 	// Default: - no additional context.
 	//
-	// Experimental.
 	PostCliContext *map[string]interface{} `field:"optional" json:"postCliContext" yaml:"postCliContext"`
 	// Include construct creation stack trace in the `aws:cdk:trace` metadata key of all constructs.
 	// Default: true stack traces are included unless `aws:cdk:disable-stack-trace` is set in the context.
 	//
-	// Experimental.
 	StackTraces *bool `field:"optional" json:"stackTraces" yaml:"stackTraces"`
 	// Include construct tree metadata as part of the Cloud Assembly.
 	// Default: true.
 	//
-	// Experimental.
 	TreeMetadata *bool `field:"optional" json:"treeMetadata" yaml:"treeMetadata"`
 }
 

@@ -7,7 +7,6 @@ import (
 	"github.com/aws/constructs-go/constructs/v10"
 )
 
-// Experimental.
 type AccountContext interface {
 }
 
@@ -16,7 +15,6 @@ type jsiiProxy_AccountContext struct {
 	_ byte // padding
 }
 
-// Experimental.
 func NewAccountContext() AccountContext {
 	_init_.Initialize()
 
@@ -31,7 +29,6 @@ func NewAccountContext() AccountContext {
 	return &j
 }
 
-// Experimental.
 func NewAccountContext_Override(a AccountContext) {
 	_init_.Initialize()
 
@@ -42,7 +39,6 @@ func NewAccountContext_Override(a AccountContext) {
 	)
 }
 
-// Experimental.
 func AccountContext_GetAccountConfig(scope constructs.Construct, key *string) interface{} {
 	_init_.Initialize()
 
@@ -61,7 +57,6 @@ func AccountContext_GetAccountConfig(scope constructs.Construct, key *string) in
 	return returns
 }
 
-// Experimental.
 func AccountContext_GetAccountId(scope constructs.Construct) *string {
 	_init_.Initialize()
 
@@ -80,7 +75,6 @@ func AccountContext_GetAccountId(scope constructs.Construct) *string {
 	return returns
 }
 
-// Experimental.
 func AccountContext_GetAccountType(scope constructs.Construct) *string {
 	_init_.Initialize()
 
@@ -99,7 +93,6 @@ func AccountContext_GetAccountType(scope constructs.Construct) *string {
 	return returns
 }
 
-// Experimental.
 func AccountContext_IsDev(scope constructs.Construct) *bool {
 	_init_.Initialize()
 
@@ -118,7 +111,6 @@ func AccountContext_IsDev(scope constructs.Construct) *bool {
 	return returns
 }
 
-// Experimental.
 func AccountContext_IsMock(scope constructs.Construct) *bool {
 	_init_.Initialize()
 
@@ -137,7 +129,6 @@ func AccountContext_IsMock(scope constructs.Construct) *bool {
 	return returns
 }
 
-// Experimental.
 func AccountContext_IsPreProd(scope constructs.Construct) *bool {
 	_init_.Initialize()
 
@@ -156,7 +147,6 @@ func AccountContext_IsPreProd(scope constructs.Construct) *bool {
 	return returns
 }
 
-// Experimental.
 func AccountContext_IsProd(scope constructs.Construct) *bool {
 	_init_.Initialize()
 
@@ -175,7 +165,6 @@ func AccountContext_IsProd(scope constructs.Construct) *bool {
 	return returns
 }
 
-// Experimental.
 func AccountContext_IsShared(scope constructs.Construct) *bool {
 	_init_.Initialize()
 
