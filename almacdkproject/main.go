@@ -66,6 +66,10 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
+		"@alma-cdk/project.Acknowledgeable",
+		reflect.TypeOf((*Acknowledgeable)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
 		"@alma-cdk/project.Author",
 		reflect.TypeOf((*Author)(nil)).Elem(),
 	)
@@ -160,6 +164,7 @@ func init() {
 		reflect.TypeOf((*Project)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "account", GoGetter: "Account"},
+			_jsii_.MemberMethod{JsiiMethod: "acknowledgeWarnings", GoMethod: "AcknowledgeWarnings"},
 			_jsii_.MemberProperty{JsiiProperty: "artifactId", GoGetter: "ArtifactId"},
 			_jsii_.MemberProperty{JsiiProperty: "assetOutdir", GoGetter: "AssetOutdir"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},

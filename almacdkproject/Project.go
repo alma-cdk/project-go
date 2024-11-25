@@ -84,6 +84,9 @@ type Project interface {
 	// hypens.
 	// Experimental.
 	StageName() *string
+	// Acknowledge warnings for all stacks in the project.
+	// Experimental.
+	AcknowledgeWarnings(acknowledgements *[]*Acknowledgeable)
 	// Synthesize this stage into a cloud assembly.
 	//
 	// Once an assembly has been synthesized, it cannot be modified. Subsequent
@@ -372,6 +375,17 @@ func Project_CONTEXT_SCOPE() *string {
 		&returns,
 	)
 	return returns
+}
+
+func (p *jsiiProxy_Project) AcknowledgeWarnings(acknowledgements *[]*Acknowledgeable) {
+	if err := p.validateAcknowledgeWarningsParameters(acknowledgements); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		p,
+		"acknowledgeWarnings",
+		[]interface{}{acknowledgements},
+	)
 }
 
 func (p *jsiiProxy_Project) Synth(options *awscdk.StageSynthesisOptions) cxapi.CloudAssembly {

@@ -11,6 +11,19 @@ import (
 	"github.com/aws/constructs-go/constructs/v10"
 )
 
+func (p *jsiiProxy_Project) validateAcknowledgeWarningsParameters(acknowledgements *[]*Acknowledgeable) error {
+	if acknowledgements == nil {
+		return fmt.Errorf("parameter acknowledgements is required, but nil was provided")
+	}
+	for idx_4fccc8, v := range *acknowledgements {
+		if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter acknowledgements[%#v]", idx_4fccc8) }); err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (p *jsiiProxy_Project) validateSynthParameters(options *awscdk.StageSynthesisOptions) error {
 	if err := _jsii_.ValidateStruct(options, func() string { return "parameter options" }); err != nil {
 		return err
