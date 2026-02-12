@@ -1,7 +1,7 @@
 package almacdkproject
 
 import (
-	_init_ "github.com/alma-cdk/project-go/almacdkproject/jsii"
+	_init_ "github.com/alma-cdk/project-go/almacdkproject/v2/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 )
 

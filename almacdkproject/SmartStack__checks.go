@@ -32,6 +32,18 @@ func (s *jsiiProxy_SmartStack) validateAddMetadataParameters(key *string, value 
 	return nil
 }
 
+func (s *jsiiProxy_SmartStack) validateAddStackTagParameters(tagName *string, tagValue *string) error {
+	if tagName == nil {
+		return fmt.Errorf("parameter tagName is required, but nil was provided")
+	}
+
+	if tagValue == nil {
+		return fmt.Errorf("parameter tagValue is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (s *jsiiProxy_SmartStack) validateAddTransformParameters(transform *string) error {
 	if transform == nil {
 		return fmt.Errorf("parameter transform is required, but nil was provided")
@@ -94,6 +106,14 @@ func (s *jsiiProxy_SmartStack) validateGetLogicalIdParameters(element awscdk.Cfn
 func (s *jsiiProxy_SmartStack) validateRegionalFactParameters(factName *string) error {
 	if factName == nil {
 		return fmt.Errorf("parameter factName is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (s *jsiiProxy_SmartStack) validateRemoveStackTagParameters(tagName *string) error {
+	if tagName == nil {
+		return fmt.Errorf("parameter tagName is required, but nil was provided")
 	}
 
 	return nil

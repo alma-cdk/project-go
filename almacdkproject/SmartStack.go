@@ -1,10 +1,10 @@
 package almacdkproject
 
 import (
-	_init_ "github.com/alma-cdk/project-go/almacdkproject/jsii"
+	_init_ "github.com/alma-cdk/project-go/almacdkproject/v2/jsii"
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 
-	"github.com/alma-cdk/project-go/almacdkproject/internal"
+	"github.com/alma-cdk/project-go/almacdkproject/v2/internal"
 	"github.com/aws/aws-cdk-go/awscdk/v2"
 	"github.com/aws/aws-cdk-go/awscdk/v2/cloudassemblyschema"
 	"github.com/aws/constructs-go/constructs/v10"
@@ -27,9 +27,9 @@ type SmartStack interface {
 	// check that it is a concrete value an not an unresolved token. If this
 	// value is an unresolved token (`Token.isUnresolved(stack.account)` returns
 	// `true`), this implies that the user wishes that this stack will synthesize
-	// into a **account-agnostic template**. In this case, your code should either
+	// into an **account-agnostic template**. In this case, your code should either
 	// fail (throw an error, emit a synth error using `Annotations.of(construct).addError()`) or
-	// implement some other region-agnostic behavior.
+	// implement some other account-agnostic behavior.
 	Account() *string
 	// The ID of the cloud assembly artifact for this stack.
 	ArtifactId() *string
@@ -135,12 +135,16 @@ type SmartStack interface {
 	// This can be used to define dependencies between any two stacks within an
 	// app, and also supports nested stacks.
 	AddDependency(target awscdk.Stack, reason *string)
-	// Adds an arbitary key-value pair, with information you want to record about the stack.
+	// Adds an arbitrary key-value pair, with information you want to record about the stack.
 	//
 	// These get translated to the Metadata section of the generated template.
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/metadata-section-structure.html
 	//
 	AddMetadata(key *string, value interface{})
+	// Configure a stack tag.
+	//
+	// At deploy time, CloudFormation will automatically apply all stack tags to all resources in the stack.
+	AddStackTag(tagName *string, tagValue *string)
 	// Add a Transform to this stack. A Transform is a macro that AWS CloudFormation uses to process your template.
 	//
 	// Duplicate values are removed when stack is synthesized.
@@ -229,8 +233,6 @@ type SmartStack interface {
 	// remove the reference from the consuming stack. After that, you can remove
 	// the resource and the manual export.
 	//
-	// ## Example
-	//
 	// Here is how the process works. Let's say there are two stacks,
 	// `producerStack` and `consumerStack`, and `producerStack` has a bucket
 	// called `bucket`, which is referenced by `consumerStack` (perhaps because
@@ -241,7 +243,7 @@ type SmartStack interface {
 	//
 	// Instead, the process takes two deployments:
 	//
-	// ### Deployment 1: break the relationship
+	// **Deployment 1: break the relationship**:
 	//
 	// - Make sure `consumerStack` no longer references `bucket.bucketName` (maybe the consumer
 	//   stack now uses its own bucket, or it writes to an AWS DynamoDB table, or maybe you just
@@ -251,7 +253,7 @@ type SmartStack interface {
 	//   between the two stacks is being broken.
 	// - Deploy (this will effectively only change the `consumerStack`, but it's safe to deploy both).
 	//
-	// ### Deployment 2: remove the bucket resource
+	// **Deployment 2: remove the bucket resource**:
 	//
 	// - You are now free to remove the `bucket` resource from `producerStack`.
 	// - Don't forget to remove the `exportValue()` call as well.
@@ -301,6 +303,10 @@ type SmartStack interface {
 	// If `defaultValue` is not given, it is an error if the fact is unknown for
 	// the given region.
 	RegionalFact(factName *string, defaultValue *string) *string
+	// Remove a stack tag.
+	//
+	// At deploy time, CloudFormation will automatically apply all stack tags to all resources in the stack.
+	RemoveStackTag(tagName *string)
 	// Rename a generated logical identities.
 	//
 	// To modify the naming scheme strategy, extend the `Stack` class and
@@ -681,6 +687,17 @@ func (s *jsiiProxy_SmartStack) AddMetadata(key *string, value interface{}) {
 	)
 }
 
+func (s *jsiiProxy_SmartStack) AddStackTag(tagName *string, tagValue *string) {
+	if err := s.validateAddStackTagParameters(tagName, tagValue); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		s,
+		"addStackTag",
+		[]interface{}{tagName, tagValue},
+	)
+}
+
 func (s *jsiiProxy_SmartStack) AddTransform(transform *string) {
 	if err := s.validateAddTransformParameters(transform); err != nil {
 		panic(err)
@@ -786,6 +803,17 @@ func (s *jsiiProxy_SmartStack) RegionalFact(factName *string, defaultValue *stri
 	)
 
 	return returns
+}
+
+func (s *jsiiProxy_SmartStack) RemoveStackTag(tagName *string) {
+	if err := s.validateRemoveStackTagParameters(tagName); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		s,
+		"removeStackTag",
+		[]interface{}{tagName},
+	)
 }
 
 func (s *jsiiProxy_SmartStack) RenameLogicalId(oldId *string, newId *string) {

@@ -121,6 +121,10 @@ type ProjectProps struct {
 	// Default: - no additional context.
 	//
 	PostCliContext *map[string]interface{} `field:"optional" json:"postCliContext" yaml:"postCliContext"`
+	// A list of IPropertyInjector attached to this App.
+	// Default: - no PropertyInjectors.
+	//
+	PropertyInjectors *[]awscdk.IPropertyInjector `field:"optional" json:"propertyInjectors" yaml:"propertyInjectors"`
 	// Include construct creation stack trace in the `aws:cdk:trace` metadata key of all constructs.
 	// Default: true stack traces are included unless `aws:cdk:disable-stack-trace` is set in the context.
 	//
